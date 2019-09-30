@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'dart:io';
+// import 'dart:io';
 
 import 'package:flutter_web/gestures.dart';
 import 'package:flutter_web/material.dart';
@@ -66,7 +66,7 @@ abstract class MarkdownWidget extends StatefulWidget {
   final MarkdownTapLinkCallback onTapLink;
 
   /// The base directory holding images referenced by Img tags with local file paths.
-  final Directory imageDirectory;
+  final String imageDirectory;
 
   /// Subclasses should override this function to display the given children,
   /// which are the parsed representation of [data].
@@ -165,7 +165,7 @@ class MarkdownBody extends MarkdownWidget {
     MarkdownStyleSheet styleSheet,
     SyntaxHighlighter syntaxHighlighter,
     MarkdownTapLinkCallback onTapLink,
-    Directory imageDirectory,
+    String imageDirectory,
   }) : super(
     key: key,
     data: data,
@@ -203,7 +203,7 @@ class Markdown extends MarkdownWidget {
     MarkdownStyleSheet styleSheet,
     SyntaxHighlighter syntaxHighlighter,
     MarkdownTapLinkCallback onTapLink,
-    Directory imageDirectory,
+    String imageDirectory,
     this.padding: const EdgeInsets.all(16.0),
   }) : super(
     key: key,

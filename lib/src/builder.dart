@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'dart:io';
+// import 'dart:io';
 
 import 'package:flutter_web/gestures.dart';
 import 'package:flutter_web/widgets.dart';
@@ -93,7 +93,7 @@ class MarkdownBuilder implements md.NodeVisitor {
   final MarkdownStyleSheet styleSheet;
 
   /// The base directory holding images referenced by Img tags with local file paths.
-  final Directory imageDirectory;
+  final String imageDirectory;
 
   final List<String> _listIndents = <String>[];
   final List<_BlockElement> _blocks = <_BlockElement>[];
@@ -270,8 +270,8 @@ class MarkdownBuilder implements md.NodeVisitor {
     } else {
       String filePath = (imageDirectory == null
           ? uri.toFilePath()
-          : p.join(imageDirectory.path, uri.toFilePath()));
-      child = new Image.file(new File(filePath), width: width, height: height);
+          : p.join(imageDirectory, uri.toFilePath()));
+      child = new Image.network(filePath, width: width, height: height);
     }
 
     if (_linkHandlers.isNotEmpty) {

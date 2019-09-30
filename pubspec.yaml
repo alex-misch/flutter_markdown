@@ -1,7 +1,7 @@
 name: flutter_web_markdown
 author: Flutter Authors <flutter-dev@googlegroups.com>
 description: A Markdown renderer for Flutter.
-homepage: https://github.com/flutter/flutter_markdown
+homepage: https://github.com/alex-misch/flutter_web_markdown
 version: 0.2.0
 
 dependencies:
@@ -24,6 +24,10 @@ dependency_overrides:
 
 dev_dependencies:
   mockito: ^3.0.0
+  # Enables the `pub run build_runner` command
+  build_runner: ">=1.6.2 <2.0.0"
+  # Includes the JavaScript compilers
+  build_web_compilers: ">=1.2.0 <3.0.0"
 
 environment:
   sdk: ">=2.3.0 <3.0.0"
